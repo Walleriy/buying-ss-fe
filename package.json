@@ -27,7 +27,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://buying-ss-be.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",

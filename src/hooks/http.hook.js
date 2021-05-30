@@ -1,5 +1,6 @@
 import {useCallback, useState} from "react";
 
+const serverUrl = process.env.REACT_APP_SERVER_URL
 
 export const useHttp = () => {
 
@@ -13,8 +14,10 @@ export const useHttp = () => {
                 body = JSON.stringify(body)
                 headers['Content-Type'] = 'application/json'
             }
-debugger
-            const response = await fetch(`https://buying-ss-be.herokuapp.com${url}`, {method, body, headers})
+            const response = await fetch(
+                `${serverUrl}${url}`,
+                {method, body, headers}
+            )
             const data = await response.json()
 
             if (!response.ok) {

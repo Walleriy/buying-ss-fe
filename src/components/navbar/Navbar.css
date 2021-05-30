@@ -1,0 +1,25 @@
+.cart__link1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    border-radius: 8px;
+}
+
+.cart__link1:hover {
+    background: #dd219e;
+    color: #f4f4f4;
+}
+
+.cartlogo__badge1 {
+    width: 30px;
+    height: 30px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    margin-left: 8px;
+    color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}

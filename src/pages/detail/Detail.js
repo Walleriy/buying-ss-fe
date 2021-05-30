@@ -10,7 +10,7 @@ export const Detail = () => {
     const {request, loading} = useHttp()
     const [link, setLink] = useState(null)
     const linkId = useParams().id
-
+debugger
     const getLink = useCallback(async () => {
         try {
             const fetched = await request(

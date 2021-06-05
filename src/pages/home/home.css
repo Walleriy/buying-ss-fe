@@ -1,0 +1,22 @@
+.home {
+    display: flex;
+    gap: 5px;
+}
+
+.home__category {
+    width: 50%;
+}
+
+.home__category h4 {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column
+    }
+
+    .home__category {
+        width: 100%;
+    }
+}

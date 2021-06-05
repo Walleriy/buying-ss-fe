@@ -8,6 +8,7 @@ import {Home} from "../pages/home/home"
 import Cart from "../pages/cart/cart-list"
 import ProductsList from "../pages/products/products-list"
 import ProductDetail from "../pages/products/product-detail/Product"
+import {About} from "../pages/about/about";
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
@@ -24,6 +25,8 @@ export const useRoutes = isAuthenticated => {
                 </Route>
                 <Route path="/" exact>
                     <Home />
+                </Route><Route path="/about" exact>
+                    <About />
                 </Route>
                 <Route path="/products" exact>
                     <ProductsList />
@@ -31,10 +34,13 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/products/:id">
                     <ProductDetail />
                 </Route>
-                <Route path="/cart">
+                <Route path="/cart" exact>
                     <Cart />
                 </Route>
-                <Redirect to="/create" />
+                <Route path="/:category">
+                    <ProductsList />
+                </Route>
+                <Redirect to="/" exact/>
             </Switch>
         )
     }

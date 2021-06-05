@@ -25,13 +25,15 @@ export const Navbar = () => {
                 <span className="brand-logo">Сервіс</span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/">Головна</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/products">Products</NavLink>
+                        <NavLink to="/processors">Процесори</NavLink>
                     </li>
-                    <li><NavLink to="/create">Створити</NavLink></li>
-                    <li><NavLink to="/links">Посилання</NavLink></li>
+                    <li>
+                        <NavLink to="/videocards">Відеокарти</NavLink>
+                    </li>
+                    <li><NavLink to="/about">Про нас</NavLink></li>
                     <li><NavLink to="/cart" className="cart__link1">
                             <i className="fas fa-shopping-cart"></i>
                             <span className="cartlogo__badge1">{getCartCount()}</span>

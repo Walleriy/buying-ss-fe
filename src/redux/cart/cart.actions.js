@@ -1,7 +1,7 @@
 import {
     ADD_TO_CART,
     CART_RESET,
-    REMOVE_FROM_CART
+    REMOVE_FROM_CART, SET_ITEM_AMOUNT
 } from "./cart.types";
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
@@ -29,6 +29,16 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     dispatch({
         type: REMOVE_FROM_CART,
         payload: id,
+    });
+
+    localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+};
+
+export const setItemAmount = (id, amount) => (dispatch, getState) => {
+    dispatch({
+        type: SET_ITEM_AMOUNT,
+        id,
+        amount
     });
 
     localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));

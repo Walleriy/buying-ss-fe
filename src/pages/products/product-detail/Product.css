@@ -9,6 +9,10 @@
     flex: 0.8;
 }
 
+.productscreen__quantity>input {
+    width: 65%!important;
+}
+
 .left__image {
     margin: 1rem;
     flex: 0.6;

@@ -9,8 +9,16 @@ import {composeWithDevTools} from "redux-devtools-extension"
 import thunk from "redux-thunk"
 import {rootReducer} from "./redux/root.reducer"
 
+const INITIAL_STATE = {
+    cart: {
+        cartItems: localStorage.getItem("cart") ?
+            JSON.parse(localStorage.getItem("cart")) : []
+    }
+}
+
 const store = createStore(
     rootReducer,
+    INITIAL_STATE,
     composeWithDevTools(applyMiddleware(thunk))
 )
 

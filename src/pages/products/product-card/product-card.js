@@ -11,9 +11,9 @@ const ProductCard = ({ imageUrl, description, price, name, productId }) => {
 
                 <p className="info__description">{description.substring(0, 100)}...</p>
 
-                <p className="info__price">${price}</p>
+                <p className="info__price">{price} грн</p>
 
-                <Link to={`/products/${productId}`} className="info__button">View</Link>
+                <Link to={`/products/${productId}`} className="info__button">Переглянути</Link>
             </div>
         </div>
     );

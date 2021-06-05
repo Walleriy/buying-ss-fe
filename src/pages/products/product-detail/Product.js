@@ -2,11 +2,12 @@ import "./Product.css"
 import React, {useState, useEffect, useCallback} from "react"
 import {useDispatch} from "react-redux"
 import {addProductToCart} from "../../../redux/cart/cart.actions"
-import {useParams} from "react-router-dom"
-import {Loader} from "../../../components/loader/Loader";
-import {useHttp} from "../../../hooks/http.hook";
+import { useParams, useHistory } from "react-router-dom"
+import {Loader} from "../../../components/loader/Loader"
+import {useHttp} from "../../../hooks/http.hook"
 
 const ProductDetail = () => {
+    const history = useHistory()
     const [product, setProduct] = useState(null)
     const [qty, setQty] = useState(1)
     const {request, loading, error} = useHttp()
@@ -27,6 +28,7 @@ const ProductDetail = () => {
 
     const addProductToCartHandler = () => {
         dispatch(addProductToCart(product._id, qty))
+        history.push(`/cart`);
     };
 
     if (loading) {
@@ -46,7 +48,7 @@ const ProductDetail = () => {
                         <div className="left__info">
                             <p className="left__name">{product.name}</p>
                             <p>Ціна: {product.price} грн</p>
-                            <p>Кількість: ${product.countInStock}</p>
+                            <p>Кількість: {product.countInStock}</p>
                             <p>Опис: <div>{product.description}</div></p>
                         </div>
                     </div>
@@ -64,6 +66,7 @@ const ProductDetail = () => {
                             </p>
                             <p>
                                 Кількість:
+                                <div className="productscreen__quantity">
                                 <input
                                     type="number"
                                     min="1"
@@ -71,6 +74,8 @@ const ProductDetail = () => {
                                     value={qty}
                                     onChange={(e) => setQty(e.target.value)}
                                 />
+                                    /{product.countInStock}
+                                </div>
                             </p>
                             <p>
                                 <button type="button" onClick={addProductToCartHandler}>

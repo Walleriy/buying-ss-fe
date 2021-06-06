@@ -1,6 +1,6 @@
 import {useCallback, useState} from "react";
 
-const serverUrl = process.env.REACT_APP_SERVER_URL
+const serverUrl = process.env.REACT_APP_SERVER_URL || 'http://localhost:5000'
 
 export const useHttp = () => {
 

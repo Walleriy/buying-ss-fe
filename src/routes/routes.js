@@ -9,6 +9,7 @@ import Cart from "../pages/cart/cart-list"
 import ProductsList from "../pages/products/products-list"
 import ProductDetail from "../pages/products/product-detail/Product"
 import {About} from "../pages/about/about";
+import {Order} from "../pages/order/order";
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
@@ -36,6 +37,9 @@ export const useRoutes = isAuthenticated => {
                 </Route>
                 <Route path="/cart" exact>
                     <Cart />
+                </Route>
+                <Route path="/order" exact>
+                    <Order />
                 </Route>
                 <Route path="/:category">
                     <ProductsList />

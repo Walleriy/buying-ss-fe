@@ -22,7 +22,7 @@ export const Navbar = () => {
     return (
         <nav>
             <div className="nav-wrapper blue darken-1" style={{ padding: '0 2 rem' }}>
-                <span className="brand-logo">Сервіс</span>
+                <span className="brand-logo">Помічник вибору</span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
                         <NavLink to="/">Головна</NavLink>

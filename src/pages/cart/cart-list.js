@@ -1,7 +1,7 @@
 import "./cart-list.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import CartItem from "./cart-item/cart-item";
 
 
@@ -51,7 +51,11 @@ const CartScreen = () => {
                         <p>Загальна вартість: {getCartSubTotal()} грн</p>
                     </div>
                     <div>
-                        <button>Proceed To Checkout</button>
+                        <button>
+                            <NavLink to="/order">
+                                Оформити замовлення
+                            </NavLink>
+                        </button>
                     </div>
                 </div>
             </div>

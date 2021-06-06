@@ -1,12 +1,13 @@
-import './home.css'
 import {NavLink} from "react-router-dom";
+import './home.css'
+import processorPhoto from './processor.png'
 
 export const Home = () => {
     return (
         <div className="home">
             <NavLink to="/processors" className="home__category">
                 <h4>Процесори</h4>
-                <img src="http://www.opengamer.com.ua/wp-content/uploads/2016/02/Processor-Minion.png" alt="processor"/>
+                <img src={processorPhoto} alt="processor"/>
             </NavLink>
             <NavLink to="/videocards" className="home__category">
                 <h4>Відеокарти</h4>

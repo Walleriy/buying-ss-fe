@@ -8,13 +8,12 @@ import {
     GET_PRODUCTS_SUCCESS
 } from "./product.types";
 
-const serverUrl = process.env.REACT_APP_SERVER_URL
+const serverUrl = process.env.REACT_APP_SERVER_URL || 'https://buying-ss-be.herokuapp.com'
 
-export const getAllProducts = () => async (dispatch) => {
+export const getAllProducts = (params) => async (dispatch) => {
     try {
         dispatch({ type: GET_PRODUCTS_REQUEST });
-
-        const response = await fetch(`${serverUrl}/api/products`)
+        const response = await fetch(`${serverUrl}/api/products?${params}`)
         const products = await response.json()
 
         dispatch({

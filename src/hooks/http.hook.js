@@ -1,6 +1,6 @@
 import {useCallback, useState} from "react";
 
-const serverUrl = process.env.REACT_APP_SERVER_URL || 'http://localhost:5000'
+const serverUrl = process.env.REACT_APP_SERVER_URL || 'https://buying-ss-be.herokuapp.com'
 
 export const useHttp = () => {
 

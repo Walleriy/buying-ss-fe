@@ -21,9 +21,9 @@ export const Navbar = () => {
 
     return (
         <nav>
-            <div className="nav-wrapper blue darken-1" style={{ padding: '0 2 rem' }}>
-                <span className="brand-logo">Помічник вибору</span>
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <div className="nav-wrapper blue nav__container darken-1" style={{ padding: '0 2 rem' }}>
+                <span className="nav__logo">Помічник вибору</span>
+                <ul id="nav-mobile" className="right">
                     <li>
                         <NavLink to="/">Головна</NavLink>
                     </li>

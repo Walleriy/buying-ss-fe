@@ -49,7 +49,11 @@ const ProductDetail = () => {
                             <p className="left__name">{product.name}</p>
                             <p>Ціна: {product.price} грн</p>
                             <p>Кількість: {product.countInStock}</p>
-                            <p>Опис: <div>{product.description}</div></p>
+                            <p>Рівень потужності: {product.score}%</p>
+                            <p>
+                                Опис:
+                                <pre>{product.description}</pre>
+                            </p>
                         </div>
                     </div>
                     <div className="productscreen__right">

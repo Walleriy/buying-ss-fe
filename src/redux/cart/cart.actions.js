@@ -4,7 +4,7 @@ import {
     REMOVE_FROM_CART, SET_ITEM_AMOUNT
 } from "./cart.types";
 
-const serverUrl = process.env.REACT_APP_SERVER_URL
+const serverUrl = process.env.REACT_APP_SERVER_URL || 'https://buying-ss-be.herokuapp.com'
 
 export const addProductToCart = (id, amount) => {
     return async (dispatch, getState) => {

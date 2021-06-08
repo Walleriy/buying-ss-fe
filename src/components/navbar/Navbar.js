@@ -13,6 +13,12 @@ export const Navbar = () => {
         return cartItems.reduce((totalAmount, item) => Number(item.amount) + totalAmount, 0);
     };
 
+    const getCartSubTotal = () => {
+        return cartItems
+            .reduce((price, item) => price + item.product.price * item.amount, 0)
+            .toLocaleString("UAH");
+    };
+
     const logoutHandler = event => {
         event.preventDefault()
         auth.logout()
@@ -37,6 +43,7 @@ export const Navbar = () => {
                     <li><NavLink to="/cart" className="cart__link1">
                             <i className="fas fa-shopping-cart"></i>
                             <span className="cartlogo__badge1">{getCartCount()}</span>
+                            <span className="cartlogo__badge2">{getCartSubTotal()} грн</span>
                         </NavLink>
                     </li>
                     <li><a href="/" onClick={logoutHandler}>Вийти</a></li>
